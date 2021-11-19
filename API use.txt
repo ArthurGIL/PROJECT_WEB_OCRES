@@ -1,0 +1,13 @@
+Site: affichage d'info space-related
+
+Api :
+https://nordicapis.com/11-space-apis-because-space-is-neat/
+https://api.nasa.gov/
+https://www.programmableweb.com/category/astronomy/api
+
+	1: People in space right now,  Natronics
+	2: Ipgeolocation Astronomy, info space == MoonCalc + SunCalc
+	3: NASA Near-Earth Comets,  info comète
+	4: NASA Asteroid NEO ... , asterois info
+	5: Astro Digital API, pics from space
+	6: La notre
