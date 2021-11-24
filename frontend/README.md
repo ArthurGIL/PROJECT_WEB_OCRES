@@ -1,3 +1,7 @@
+Installer React Router :
+npm install react-router-dom
+npm install --save react-router react-router-dom
+
 # Frontend
 
 Ce dossier contiendra la partie frontend de votre projet.

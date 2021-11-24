@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
-import Button from './button.js';
+import Nav from './design/Nav.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './design/pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Button button="App" onclick=""></Button>
-    </div>
+    <>
+      <Router>
+        <Nav/>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
