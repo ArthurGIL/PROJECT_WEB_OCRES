@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './Nav.css';
 
 function Navbar() {
-  /*Récupere le statut du bouton (si il a été clické ou pas)*/
+  //Récupere le statut du bouton
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  //Décide de l'action à effectuer lorsqu'on click sur l'icone ou ferme le menu déroulant
+  //Décide de l'action à effectuer lorsqu'on ouvre ou ferme le menu déroulant
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -33,7 +33,8 @@ function Navbar() {
           {// Retour Home + fermeture du menu déroulant (si il existe)
           }
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img class='navbar-img' src='/pictures/galaxy.png'/>
+            <img className='navbar-img' src='/pictures/galaxy.png' alt='Galaxapi Logo'/>
+            GALAXAPI
           </Link>
 
           {//Utilisation de la bibliotheque font awesome pour créer les bars et la croix
@@ -58,18 +59,20 @@ function Navbar() {
               </Link>
             </li>
             
-            {//Affichage uniquement sur peti écrans (lorque l'on appuie sur le menu)
+            {//Affichage uniquement sur petit écrans (lorqu'on ouvre le menu)
             }
             <li>
-              <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
+              <Link to='/images' className='nav-links-mobile' onClick={closeMobileMenu}>
                 Images
               </Link>
             </li>
           </ul>
           
-          {//On assigne "IMAGES" a button grace à la balise children
+          {//On assigne "IMAGES" au button par defaut grace à la balise children ainsi qu'un style de bouton
           }
-          {button && <Button buttonStyle='btn--outline'>IMAGES</Button>}
+          <Link to='/images' onClick={closeMobileMenu}>
+            {button && <Button buttonStyle='btn--outline'>IMAGES</Button>}
+          </Link>
         </div>
       </nav>
   );

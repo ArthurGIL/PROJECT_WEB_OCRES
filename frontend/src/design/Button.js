@@ -1,6 +1,5 @@
 import React from 'react';
 import './Button.css';
-import { Link } from 'react-router-dom';
 
 //tableau de style de bouton par defaut
 const STYLES = ['btn--primary', 'btn--outline'];
@@ -16,12 +15,10 @@ export const Button = ({children, type, onClick, buttonStyle, buttonSize}) => {
   //Si le bouton a une taille particuliere, on la lui met, sinon on lui assigne une taille par défaut
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
-  //Création 
+  //Création du bouton par defaut avec children qui prend un objet a afficher à l'interieur du bouton
   return (
-    <Link to='/images' className='btn-mobile'>
-      <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
-        {children}
-      </button>
-    </Link>
+    <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
+      {children}
+    </button>
   );
 };

@@ -1,11 +1,11 @@
 import '../../App.css';
-import HeroSection from '../HomePage';
+import HomePage from '../HomePage';
 import React from 'react';
 
 function Home() {
     return (
         <>
-            <HeroSection />
+            <HomePage />
         </>
     );
 }
