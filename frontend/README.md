@@ -1,6 +1,9 @@
-Installer React Router :
+INSTALLER REACT ROUTER :
 npm install react-router-dom
 npm install --save react-router react-router-dom
+
+INSTALLER RECHARTS :
+npm install recharts
 
 # Frontend
 

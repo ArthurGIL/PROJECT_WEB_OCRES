@@ -1,6 +1,7 @@
 import React from 'react';
 import './DashPage.css';
 import Card from './Card';
+import Chart from './Chart';
 
 function DashPage() {
   return (
@@ -16,6 +17,9 @@ function DashPage() {
           <ul className='dash-items'>
             <Card src='/pictures/19608.jpg' text='Near-Earth Comets,  info comète' label='NASA' path='/dashboard'/>
             <Card src='/pictures/39619.jpg' text='Asteroid NEO..., info asteroides' label='NASA' path='/dashboard'/>
+          </ul>
+          <ul className='dash-items'>
+            <Chart />
           </ul>
         </div>
       </div>
