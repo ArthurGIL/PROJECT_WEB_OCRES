@@ -8,6 +8,12 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+const mongoose = require('mongoose');
+
+const CONNECTION_URL = 'mongodb+srv://Arthur:arthurmp69@cluster0.cout0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+mongoose.connect(CONNECTION_URL, {useNewUrlParser: true}, () => console.log('Database connected'));
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

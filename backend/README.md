@@ -3,4 +3,6 @@ npm install
 npm i -g pm2
 pm2 start bon/www --watch
 
-npm install uuid
+npm install mongodb
+
+npm install mongoose

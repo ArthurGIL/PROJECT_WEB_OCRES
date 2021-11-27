@@ -1,57 +1,64 @@
+const { json } = require('express');
 var express = require('express');
 var router = express.Router();
 
-const { v4: uuidv4 } = require('uuid');
+const Post = require('../models/Post');
 
-//database
-let users = [];
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {  
-  res.send(users);
+router.get('/', async (req, res) => {
+  const list = await Post.find();
+  res.json(list);
 });
 
-/* CREATE a new user with id */
-router.post('/', function(req, res, next) {
-  const user = req.body;
-  //Spread des properties d'un user (name, age...) + ajout de l'id unique
-  const userId = { ...user, id: uuidv4() }
-  users.push(userId);
 
-  res.send(`User with the name ${user.firstName} added to the database`);
+/* CREATE a new user */
+router.post('/', async (req, res) => {
+  const post = new Post({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    age: req.body.age,
+  });
+
+  const create = await post.save();
+  res.json(create);
+
+  res.send(`User with the name ${post.firstName} and the id: ${post._id} added to the database`);
 });
+
 
 /* RESEARCH a user by id */
-router.get('/:id', function(req, res, next) {
-  //Récupération de l'id de chaque user avec req.params
-  const { id } = req.params;
-  const foundUser = users.find((user) => user.id === id);
+router.get('/:id', async (req, res) => {
+  const research = await Post.findById(req.params.id);
+  res.json(research);
 
-  res.send(foundUser);
+  res.send(`Found user with the name ${post.firstName}`);
 });
+
 
 /* DELETE a user by id */
-router.delete('/:id', function(req, res, next) {
-  //Suppression d'un user en fonction de son id
-  const { id } = req.params;
-  //On sélectionne le user a supprimer en fonction du user connecté
-  users = users.filter((user) => user.id !== id); //On filtre les users qui n'ont pas le même id
+router.delete('/:id', async (req, res) => {
+  const suppr = await Post.remove({_id: req.params.id});
+  res.json(suppr);
 
-  res.send(`User with id : ${id} deleted`);
+  res.send(`Deleted user with the name ${post.firstName} and the id: ${post._id}`);
 });
+
 
 /* UPDATE a user by id */
-router.patch('/:id', function(req, res, next) {  
-  const { id } = req.params;
-  const { firstName, lastName, age } = req.body;
-  //Trouve l'id du user correspondant
-  const user = users.find((user) => user.id === id);
+router.patch('/:id', async (req, res) => {  
+  const update = await Post.updateOne(
+    { _id: req.params.id },
+    { $set: { 
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      age: req.body.age
+    } }
+  );
+  res.json(update);
 
-  if(firstName) { user.firstName = firstName; }
-  if(lastName) { user.lastName = lastName; }
-  if(age) { user.age = age; }
-
-  res.send(`User with the id : ${id} has been updated`)
+  res.send(`User with the name: ${post.firstName} and the id: ${post._id} has been updated`)
 });
+
 
 module.exports = router;
