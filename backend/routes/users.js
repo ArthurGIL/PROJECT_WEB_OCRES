@@ -5,59 +5,66 @@ var router = express.Router();
 const Post = require('../models/Post');
 
 
-/* GET users listing. */
+/* GET astronauts listing. */
 router.get('/', async (req, res) => {
   const list = await Post.find();
   res.json(list);
 });
 
 
-/* CREATE a new user */
+/* CREATE a new astronaut */
 router.post('/', async (req, res) => {
   const post = new Post({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    age: req.body.age,
+    name: req.body.name,
+    dateNaissance: req.body.dateNaissance,
+    mission: req.body.mission,
+    dateMission: req.body.dateMission,
+    nationalite: req.body.nationalite,
+    employeur: req.body.employeur
   });
 
   const create = await post.save();
   res.json(create);
 
-  res.send(`User with the name ${post.firstName} and the id: ${post._id} added to the database`);
+  res.send(`User with the name ${post.name} and the id: ${post._id} added to the database`);
 });
 
 
-/* RESEARCH a user by id */
+/* RESEARCH a astronaut by id */
 router.get('/:id', async (req, res) => {
   const research = await Post.findById(req.params.id);
   res.json(research);
 
-  res.send(`Found user with the name ${post.firstName}`);
+  res.send(`Found user with the name ${post.name}`);
 });
 
 
-/* DELETE a user by id */
+/* DELETE a astronaut by id */
 router.delete('/:id', async (req, res) => {
   const suppr = await Post.remove({_id: req.params.id});
   res.json(suppr);
 
-  res.send(`Deleted user with the name ${post.firstName} and the id: ${post._id}`);
+  res.send(`Deleted user with the name ${post.name} and the id: ${post._id}`);
 });
 
 
-/* UPDATE a user by id */
+/* UPDATE a astronaut by id */
 router.patch('/:id', async (req, res) => {  
   const update = await Post.updateOne(
     { _id: req.params.id },
     { $set: { 
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      age: req.body.age
-    } }
+        name: req.body.name,
+        dateNaissance: req.body.dateNaissance,
+        mission: req.body.mission,
+        dateMission: req.body.dateMission,
+        nationalite: req.body.nationalite,
+        employeur: req.body.employeur
+      } 
+    }
   );
   res.json(update);
 
-  res.send(`User with the name: ${post.firstName} and the id: ${post._id} has been updated`)
+  res.send(`User with the name: ${post.name} and the id: ${post._id} has been updated`)
 });
 
 
