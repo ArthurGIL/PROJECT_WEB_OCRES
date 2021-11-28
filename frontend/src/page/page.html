@@ -1,0 +1,42 @@
+<head>
+    <script src="API/API_issLoc.js"></script>
+    <script src="API/API_apod.js"></script>
+    <script src="API/API_geo.js"></script>
+    <script src="API/API_mars.js"></script>
+</head>
+<body style='padding:10%; background:linear-gradient(0.25turn, #2100dad2, #010d91, rgb(1, 0, 53));'>
+
+    <!--     Where is the ISS ?  -->
+    <h1 id='ttl'> Where is the ISS </h1>  
+        <button onclick= 'getIss()' >Iss</button><br>
+            <h2>Latitude : <i id='lat'>0</i><br>
+                Longitude : <i id='lon'>0</i></h2>
+
+    <hr>
+    <!--    NASA Apod  -->
+    <h1>NASA Astronomy Picture Of The Day</h1> 
+        <button onclick= 'showApod()' >APOD</button><br>
+        <h2 id="title"></h2>
+        <h3>Date: <span id="date"></span></h3>
+        <img id="pic" src="" alt="NASA Picture Of The Day" width="100%">
+
+    <hr>
+    <!--  Sun/Moon Stats  -->
+    <button onclick= 'showloc()' >GEOLOC</button><br>
+    <h1>Position : </h1>
+    latitude : <u id="mylat">0</u> <br>
+    longitude : <u id="mylong">0</u><br>
+    my IP : <u id="myip">0</u><br><br>
+    Sunrise : <u id="sunrise">00:00</u><br>
+    Sunset : <u id="sunset">00:00</u><br>
+    Sun Distance : <u id="dis">0</u> km<br>
+    Moon Distance : <u id="moondis">0</u> km<br>
+
+    <hr>
+    <!-- Mars Info   -->
+
+
+    <hr>
+    <!--    -->
+
+</body>
