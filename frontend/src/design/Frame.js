@@ -1,18 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Frame(props) {
   return (
     //Création de la carte par défaut avec un lien vers une route, une catégorie, une image et du texte
     <>
-      <li className='img-item'>
-        <div className='img-box'>
-            <figure className='img-user' data-category={props.label}>
-                <img className='img' alt='Card' src={props.src}/>
+      <li className='frame-item'>
+        <Link className='frame-box' to={props.path}>
+            <figure className='frame-date' data-category={props.label}>
+                <img className='frame-img' alt='Frame' src={props.src}/>
             </figure>
-        </div>
+            <div className='frame-info'>
+                <h5 className='frame-text'>{props.text}</h5>
+            </div>
+        </Link>
       </li>
     </>
   );
 }
 
 export default Frame;
+

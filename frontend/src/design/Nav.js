@@ -62,16 +62,16 @@ function Navbar() {
             {//Affichage uniquement sur petit écrans (lorqu'on ouvre le menu)
             }
             <li>
-              <Link to='/images' className='nav-links-mobile' onClick={closeMobileMenu}>
-                Images
+              <Link to='/Api' className='nav-links-mobile' onClick={closeMobileMenu}>
+                Api
               </Link>
             </li>
           </ul>
           
-          {//On assigne "IMAGES" au button par defaut grace à la balise children ainsi qu'un style de bouton
+          {//On assigne "API" au button par defaut grace à la balise children ainsi qu'un style de bouton
           }
-          <Link to='/images' onClick={closeMobileMenu}>
-            {button && <Button buttonStyle='btn--outline'>IMAGES</Button>}
+          <Link to='/Api' onClick={closeMobileMenu}>
+            {button && <Button buttonStyle='btn--outline'>API</Button>}
           </Link>
         </div>
       </nav>
