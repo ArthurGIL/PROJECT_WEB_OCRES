@@ -6,14 +6,15 @@ const Post = require('../models/Post');
 
 
 /* GET astronauts listing. */
-router.get('/', async (req, res) => {
+const getUsers = async (req, res) => {
   const list = await Post.find();
   res.json(list);
-});
+}
+router.get('/', getUsers);
 
 
 /* CREATE a new astronaut */
-router.post('/', async (req, res) => {
+const createUser = async (req, res) => {
   const post = new Post({
     name: req.body.name,
     dateNaissance: req.body.dateNaissance,
@@ -25,31 +26,28 @@ router.post('/', async (req, res) => {
 
   const create = await post.save();
   res.json(create);
-
-  res.send(`User with the name ${post.name} and the id: ${post._id} added to the database`);
-});
+}
+router.post('/', createUser);
 
 
 /* RESEARCH a astronaut by id */
-router.get('/:id', async (req, res) => {
+const researchUser = async (req, res) => {
   const research = await Post.findById(req.params.id);
   res.json(research);
-
-  res.send(`Found user with the name ${post.name}`);
-});
+}
+router.get('/:id', researchUser);
 
 
 /* DELETE a astronaut by id */
-router.delete('/:id', async (req, res) => {
+const deleteUser = async (req, res) => {
   const suppr = await Post.remove({_id: req.params.id});
   res.json(suppr);
-
-  res.send(`Deleted user with the name ${post.name} and the id: ${post._id}`);
-});
+}
+router.delete('/:id', deleteUser);
 
 
 /* UPDATE a astronaut by id */
-router.patch('/:id', async (req, res) => {  
+const updateUser = async (req, res) => {  
   const update = await Post.updateOne(
     { _id: req.params.id },
     { $set: { 
@@ -63,9 +61,8 @@ router.patch('/:id', async (req, res) => {
     }
   );
   res.json(update);
-
-  res.send(`User with the name: ${post.name} and the id: ${post._id} has been updated`)
-});
+}
+router.patch('/:id', updateUser);
 
 
 module.exports = router;

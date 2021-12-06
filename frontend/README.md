@@ -5,6 +5,10 @@ npm install --save react-router react-router-dom
 INSTALLER RECHARTS :
 npm install recharts
 
+INSTALLER BOOTSTRAP :
+npm i bootstrap
+npm i reactstrap react react-dom
+
 # Frontend
 
 Ce dossier contiendra la partie frontend de votre projet.

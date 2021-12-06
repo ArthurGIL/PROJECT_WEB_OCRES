@@ -1,6 +1,7 @@
 import React from 'react';
 import './ApiPage.css';
 import Card from './Card';
+import ApiRest from './ApiRest';
 
 function ApiPage() {
   return (
@@ -16,6 +17,7 @@ function ApiPage() {
                     <Card src='/pictures/19608.jpg' text='Near-Earth Comets,  info comète' label='NASA' path='/api'/>
                     <Card src='/pictures/39619.jpg' text='Asteroid NEO..., info asteroides' label='NASA' path='/api'/>
                 </ul>
+                <ApiRest />
             </div>
         </div>
     </div>
