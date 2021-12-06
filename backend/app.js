@@ -10,6 +10,7 @@ var app = express();
 
 const mongoose = require('mongoose');
 
+// mongodb+srv://ArthurAPI:ArthurAPI@cluster0.4r6xf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 const CONNECTION_URL = 'mongodb+srv://Arthur:arthurmp69@cluster0.cout0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(CONNECTION_URL, {useNewUrlParser: true}, () => console.log('Database connected'));
