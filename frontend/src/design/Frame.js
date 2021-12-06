@@ -12,6 +12,10 @@ function Frame(props) {
             </figure>
             <div className='frame-info'>
                 <h5 className='frame-text'>{props.text}</h5>
+                <br/>
+                <h7 className='frame-text'>{props.content1}</h7>
+                <br/>
+                <h7 className='frame-text'>{props.content2}</h7>
             </div>
         </Link>
       </li>
