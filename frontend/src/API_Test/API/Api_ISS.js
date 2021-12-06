@@ -5,7 +5,7 @@ import Frame from '../../design/Frame.js';
 // Url API 
 const API_URL1 = "https://api.wheretheiss.at/v1/satellites/25544" ;
 
-class API_issLoc extends Component {
+class Api_ISS extends Component {
     state = {
         post: {}
     }
@@ -21,9 +21,9 @@ class API_issLoc extends Component {
 
     render() {
         return (
-            <Frame src='/pictures/7046.jpg' text='Donées ISS en temps réel' content1={"Latitude: " + this.state.post.latitude} content2={"Longitude: " + this.state.post.longitude} label='wheretheiss.at' path='/dashboard'/>
+            <Frame src='/pictures/iss.jpg' text='Donées ISS en temps réel' content1={"Latitude : " + this.state.post.latitude} content2={"Longitude : " + this.state.post.longitude} label='WhereTheIss.at' path='/dashboard'/>
         );
     }
 }
 
-export default API_issLoc;
+export default Api_ISS;

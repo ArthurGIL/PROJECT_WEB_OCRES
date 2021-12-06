@@ -11,11 +11,11 @@ function Frame(props) {
                 <img className='frame-img' alt='Frame' src={props.src}/>
             </figure>
             <div className='frame-info'>
-                <h5 className='frame-text'>{props.text}</h5>
+                <h4 className='frame-text'>{props.text}</h4>
                 <br/>
-                <h7 className='frame-text'>{props.content1}</h7>
+                <h8 className='frame-text'>{props.content1}</h8>
                 <br/>
-                <h7 className='frame-text'>{props.content2}</h7>
+                <h8 className='frame-text'>{props.content2}</h8>
             </div>
         </Link>
       </li>

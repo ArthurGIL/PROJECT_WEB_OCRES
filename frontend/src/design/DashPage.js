@@ -2,7 +2,10 @@ import React from 'react';
 import './DashPage.css';
 import Frame from './Frame';
 import Chart from './Chart';
-import API_issLoc from '../API_Test/API/API_issLoc';
+import Api_ISS from '../API_Test/API/Api_ISS';
+import ApiGeo_Sun from '../API_Test/API/ApiGeo_Sun';
+import ApiGeo_Moon from '../API_Test/API/ApiGeo_Moon';
+import Api_Picture from '../API_Test/API/Api_Picture';
 
 function DashPage() {
   return (
@@ -11,13 +14,13 @@ function DashPage() {
       <div className='dash-container'>
         <div className='dash-wrapper'>
           <ul className='dash-items'>
-            <API_issLoc/>
-            <Frame src='/pictures/39620.jpg' text='Pics from space' label='ASTRO DIGITAL' path='/dashboard'/>
+            <Api_ISS/>
+            <Api_Picture />
             <Frame src='/pictures/19608.jpg' text='Near-Earth Comets ans Asteroids' label='NASA' path='/dashboard'/>
           </ul>
           <ul className='dash-items'>
-            <Frame src='/pictures/sun3.png' text='Ipgeolocation Astronomy - SunCalc' label='INFO SPACE' path='/dashboard'/>
-            <Frame src='/pictures/moon3.jpg' text='Ipgeolocation Astronomy - MoonCalc' label='INFO SPACE' path='/dashboard'/>
+            <ApiGeo_Sun />
+            <ApiGeo_Moon />
           </ul>
           <ul className='dash-chart'>
             <Chart />
