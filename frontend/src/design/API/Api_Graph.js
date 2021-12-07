@@ -1,11 +1,11 @@
 // API : https://wheretheiss.at/w/developer
 import React, { Component } from 'react';
-import Frame from '../../design/Frame.js';
+import Frame from '../Frame.js';
 
 // Url API 
 const API_URL1 = "https://api.wheretheiss.at/v1/satellites/25544" ;
 
-class Api_ISS extends Component {
+class Api_Graph extends Component {
     state = {
         post: {}
     }
@@ -21,9 +21,9 @@ class Api_ISS extends Component {
 
     render() {
         return (
-            <Frame src='/pictures/iss.jpg' text='Donées ISS en temps réel' content1={"Latitude : " + this.state.post.latitude} content2={"Longitude : " + this.state.post.longitude} label='WhereTheIss.at' path='/dashboard'/>
+            <Frame src='/pictures/iss.jpg' text='Donées ISS en temps réel' content1={"Long : " + this.state.post.longitude + ", Lat : " + this.state.post.latitude} content2={"Vélocité : " + this.state.post.velocity + " km/h"} label='WhereTheIss.at' path='/dashboard'/>
         );
     }
 }
 
-export default Api_ISS;
+export default Api_Graph;

@@ -1,6 +1,6 @@
 // API : https://ipgeolocation.io/documentation/astronomy-api.html
 import React, { Component } from 'react';
-import Frame from '../../design/Frame.js';
+import Frame from '../Frame.js';
 
 
 // Url API 
