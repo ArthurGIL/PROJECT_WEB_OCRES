@@ -4,9 +4,9 @@ import Chart from './Chart';
 import Api_ISS from './API/Api_ISS';
 import ApiGeo_Sun from './API/ApiGeo_Sun';
 import ApiGeo_Moon from './API/ApiGeo_Moon';
-import Api_Picture from './API/Api_Picture';
+import Api_PictureAncient from './API/Api_PictureAncient';
 import Api_Mars from './API/Api_Mars';
-import Api_Rover from './API/Api_Rover';
+import Api_Picture from './API/Api_Picture';
 
 function DashPage() {
   return (
@@ -16,8 +16,8 @@ function DashPage() {
         <div className='page-wrapper'>
           <ul className='page-items'>
             <Api_ISS />
+            <Api_PictureAncient />
             <Api_Picture />
-            <Api_Rover />
           </ul>
           <ul className='page-items'>
             <ApiGeo_Sun />

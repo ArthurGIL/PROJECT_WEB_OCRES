@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 
-function Navbar() {
+function Nav() {
   //Récupere le statut du bouton
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -24,7 +24,7 @@ function Navbar() {
   //Utilisation de la biblioteque React pour afficher ou non les boutons
   useEffect(() => { showButton(); }, []);
 
-  //Appelle showbutton a chaque fois que la fenetre est resize
+  //Appelle showbutton quand la fenetre est resize
   window.addEventListener('resize', showButton);
 
   return (
@@ -45,7 +45,7 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
 
-          {//Lorsque le menu deroulant est actif, on affiche les boutons en liste. Sinon on affiche le menu
+          {//Lorsque le bouton menu est clické, on affiche le menu glissant et les boutons en liste. Sinon on affiche le menu dans la navbar
           }
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
@@ -78,4 +78,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Nav;
