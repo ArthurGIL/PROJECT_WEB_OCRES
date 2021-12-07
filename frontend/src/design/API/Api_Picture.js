@@ -1,10 +1,10 @@
-// API : https://wheretheiss.at/w/developer
+// API : https://api.nasa.gov/
+//       https://api.nasa.gov/planetary/apod?api_key=I9zujY3IIuLDhoyOpvh5K5PDXayBLskqhHS5klFi
 import React, { Component } from 'react';
 import Frame from '../Frame.js';
 
 // Url API 
 const API_URL2 = "https://api.nasa.gov/planetary/apod?api_key=I9zujY3IIuLDhoyOpvh5K5PDXayBLskqhHS5klFi";
-
 
 class Api_Picture extends Component {
     state = {
