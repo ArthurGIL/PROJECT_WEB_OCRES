@@ -11,6 +11,14 @@ body {
   overflow-y: hidden;
 }
 
+h1 {
+  position: fixed;
+}
+
+p {
+  position: fixed;
+}
+
 .hero-container {
   height: 100vh;
   width: 100%;

@@ -24,6 +24,10 @@ const schema = mongoose.Schema({
     employeur: {
       type: String,
       required: true
+    },
+    image: {
+      type: String,
+      required: true
     }
   });
 

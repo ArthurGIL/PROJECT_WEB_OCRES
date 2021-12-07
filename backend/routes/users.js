@@ -21,7 +21,8 @@ const createUser = async (req, res) => {
     mission: req.body.mission,
     dateMission: req.body.dateMission,
     nationalite: req.body.nationalite,
-    employeur: req.body.employeur
+    employeur: req.body.employeur,
+    image: req.body.image
   });
 
   const create = await post.save();
@@ -56,7 +57,8 @@ const updateUser = async (req, res) => {
         mission: req.body.mission,
         dateMission: req.body.dateMission,
         nationalite: req.body.nationalite,
-        employeur: req.body.employeur
+        employeur: req.body.employeur,
+        image: req.body.image
       } 
     }
   );
