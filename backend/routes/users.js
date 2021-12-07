@@ -31,7 +31,7 @@ const createUser = async (req, res) => {
 router.post('/', createUser);
 
 
-/* RESEARCH a astronaut by id */
+/* RESEARCH an astronaut by id */
 const researchUser = async (req, res) => {
   const research = await Post.findById(req.params.id);
   res.json(research);
@@ -39,7 +39,7 @@ const researchUser = async (req, res) => {
 router.get('/:id', researchUser);
 
 
-/* DELETE a astronaut by id */
+/* DELETE an astronaut by id */
 const deleteUser = async (req, res) => {
   const suppr = await Post.remove({_id: req.params.id});
   res.json(suppr);
@@ -47,7 +47,7 @@ const deleteUser = async (req, res) => {
 router.delete('/:id', deleteUser);
 
 
-/* UPDATE a astronaut by id */
+/* UPDATE an astronaut by id */
 const updateUser = async (req, res) => {  
   const update = await Post.updateOne(
     { _id: req.params.id },
