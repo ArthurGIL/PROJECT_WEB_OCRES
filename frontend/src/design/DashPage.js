@@ -28,7 +28,7 @@ function DashPage() {
           </ul>
           <br/>
           <ul className='page-chart'>
-          <Api_Graph/>
+            <Api_Graph/>
           </ul>
         </div>
       </div>
