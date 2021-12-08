@@ -77,7 +77,7 @@ class Api_Graph extends Component {
     render() {
 		return (
 			<BarChart 
-				width={700}
+				width={500}
 				height={450}
 				data={this.getData(this)}
 				margin={{top: 5, right: 30, left: 20, bottom: 5,}}
