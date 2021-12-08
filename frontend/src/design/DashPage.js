@@ -1,6 +1,6 @@
 import React from 'react';
 import './StylePage.css';
-import Chart from './Chart';
+import Api_Graph from './API/Api_Graph';
 import Api_ISS from './API/Api_ISS';
 import ApiGeo_Sun from './API/ApiGeo_Sun';
 import ApiGeo_Moon from './API/ApiGeo_Moon';
@@ -28,7 +28,7 @@ function DashPage() {
           </ul>
           <br/>
           <ul className='page-chart'>
-            <Chart />
+          <Api_Graph/>
           </ul>
         </div>
       </div>
